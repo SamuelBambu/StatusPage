@@ -1,0 +1,102 @@
+table{
+  width: 100%;
+}
+h2{
+
+}
+.sidebar{
+  background-image: url("/static/img/bg.jpg");
+  background-repeat: repeat;
+}
+.brand-tagline{
+
+}
+.eleventa-logo{
+  width: 180px;
+  margin: auto;
+}
+.check-label{
+  font-size: 14px;
+  font-weight: bold;
+  margin: 0;
+  color: #999;
+}
+.check-value{
+  font-size: 14px;
+  margin-top: 0;
+  margin-bottom: .5em;
+
+}
+.check-title{
+  font-size: 20px;
+  font-weight: bold;
+  text-align: center;
+  margin-top: .5em;
+  margin-bottom: .5em;
+
+}
+.status{
+  font-size: 20px;
+  display: block
+}
+.activo{
+  color: #43a047;
+}
+.caido{
+  color: #e53935;
+}
+.status-up{
+  background-color:#f1f8e9;
+}
+.status-down{
+  background-color: #ffebee;
+}
+#fecha-hora{
+  color: #999;
+  font-size: 14px;
+}
+#fecha-hora::before{
+  content: "Tiempo actual:";
+  font-size: 10px;
+  color: #999;
+  display: block;
+}
+#toggle-historico{
+  font-size: 14px;
+  color: #999;
+}
+
+/* Tooltip container */
+.tooltip {
+    position: relative;
+    display: inline-block;
+}
+
+/* Tooltip text */
+.tooltip .tooltiptext {
+    visibility: hidden;
+    width: 120px;
+    background-color: #555;
+    color: #fff;
+    text-align: center;
+    padding: 5px 0;
+    border-radius: 6px;
+    font-size: 14px;
+
+    /* Position the tooltip text */
+    position: absolute;
+    z-index: 1;
+    top: 125%;
+    left: 50%;
+    margin-left: -60px;
+
+    /* Fade in tooltip */
+    opacity: 0;
+    transition: opacity 1s;
+}
+
+/* Show the tooltip text when you mouse over the tooltip container */
+.tooltip:hover .tooltiptext {
+    visibility: visible;
+    opacity: 1;
+}
