@@ -3,7 +3,10 @@ const icoActivo = "<i class='tooltip fa fa-check-circle' aria-hidden='true'>";
 const icoCaido = "<i class='tooltip fa fa-times-circle' aria-hidden='true'>";
 const icoArriba = "<i class='tooltip fa fa-arrow-circle-up' aria-hidden='true'>";
 
-
+const waitingView = "<div class='loading-services'>"+
+                      "<h1>Verificanto Estatus de Servicios</h1>"+
+                      "<img src='static/img/ajax-loader.gif'>"+
+                    "</div>"
 
 /*
 {
@@ -14,8 +17,8 @@ const icoArriba = "<i class='tooltip fa fa-arrow-circle-up' aria-hidden='true'>"
 */
 
 const rowView = _.template(
-  "<tr id='id' >"+
-    "<td><i class=' tooltip fa fa-arrow-circle-up' aria-hidden='true'>"+
+  "<tr id='<%= id %>' >"+
+    "<td><% status ? print(icoArriba) : print(icoCaido) %>"+
       "<span class='tooltiptext' >Ping: <%= lastresponsetime %> </span>"+
     "</td>"+
     "<td><%= hostname %></td>"+

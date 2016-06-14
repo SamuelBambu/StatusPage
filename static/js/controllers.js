@@ -9,9 +9,12 @@ function appController(  ){
                             "servicios.ecodex.com.mx"
                           ];
   this.currentAppDateTime = function(){
-        return new Date().toLocaleString();
+        return new Date().toUTCString().substring(4);;
   };
-  this.hostsRenderedTable = "";
+  this.hostsRenderedTable = waitingView;
+  //actualizamos la fecha instantaneamente
+  document.getElementById("current-date").innerHTML = this.currentAppDateTime();
+
 }
 
 appController.prototype = {
@@ -37,6 +40,7 @@ appController.prototype = {
       );
       console.log("Services fetched");
       self.createHostsRenderedTable();
+      self.render();
     });
 
   },
