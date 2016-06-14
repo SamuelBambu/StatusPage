@@ -34,60 +34,18 @@
     <div class="sidebar pure-u-1 pure-u-md-1-4">
         <div class="header">
             <h1>Eleventa</h1>
-            <h2 class="brand-tagline">Version actual:</h2>
-            <h2 class="brand-tagline">X.X.X</h2>
         </div>
     </div>
 
     <div class="content pure-u-1 pure-u-md-3-4">
-        <div id="app" >
-            <h2>Estatus de nuestros servicios <span id="fecha-hora" >31/05/2016 12:20:55PM (GMT -06:00)</span></h2>
-            <table class="pure-table pure-table-horizontal">
-                <thead>
-                    <tr>
-                        <th>Historico <span id="toggle-historico">(tiempos de respuesta)</span></th>
-                        <th>Estatus actual</th>
-                    </tr>
-                </thead>
+          <div id="app" >
+            <div class="loading-services">
+              <h1>Verificanto Estatus de Servicios</h1>
+              <img src="static/img/ajax-loader.gif">
+            </div>
 
-                <tbody>
-                    <tr class="status-up">
-                        <td>
-                            <canvas id="myChart" width="350" height="70"></canvas>
-                        </td>
-                        <td>
-                          <p class="check-title">PAC Ecodex
-                            <span class=" status activo ">
-                              <i class="tooltip fa fa-check-circle" aria-hidden="true">
-                                <span class="tooltiptext">Servicio activo</span>
-                              </i>
-                            </span>
-                          </p>
-                          <p class="check-label">Ultima verificac&iacute;on:</p>
-                          <p class="check-value">31/05/2016 01:24PM</p>
-                          <p class="check-label">Tiempo de respuesta:</p>
-                          <p class="check-value">485 ms</p>
-                        </td>
-                    </tr>
-
-                    <tr class="status-down">
-                        <td>2</td>
-                        <td>Toyota</td>
-                    </tr>
-
-                    <tr>
-                        <td>3</td>
-                        <td>Hyundai</td>
-                    </tr>
-
-                    <tr>
-                        <td>3</td>
-                        <td>Hyundai</td>
-                    </tr>
-                </tbody>
-            </table>
           </div>
-          
+
           <div class="footer">
               <div class="pure-menu pure-menu-horizontal">
                   <ul>
@@ -104,10 +62,10 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js" type="text/javascript"></script>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-rc1/jquery.min.js"></script>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.1.4/Chart.min.js"></script>
-<script src="/static/js/main.js" type="text/javascript"></script>
 <script src="/static/js/views.js" type="text/javascript"></script>
 <script src="/static/js/models.js" type="text/javascript"></script>
 <script src="/static/js/controllers.js" type="text/javascript"></script>
+<script src="/static/js/main.js" type="text/javascript"></script>
 
 </body>
 </html>

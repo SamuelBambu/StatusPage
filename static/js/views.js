@@ -44,6 +44,8 @@ const hostView = _.template(
 */
 const icoActivo = "<i class='tooltip fa fa-check-circle' aria-hidden='true'>";
 const icoCaido = "<i class='tooltip fa fa-times-circle' aria-hidden='true'>";
+const icoArriba = "<i class='tooltip fa fa-arrow-circle-up' aria-hidden='true'>";
+
 
 const statusDeCo = _.template(
   "<span class=' status <%  status ? print('activo') : print('caido') %> '>"+
@@ -57,12 +59,12 @@ const statusDeCo = _.template(
 /*
   {
       appTime : str,
-      hostCollection : hostNameModel[]
+      hostCollectionRenderedTable : str,
 
   }
 */
 const appView = _.template(
-  "<h2>Estatus de nuestros servicios <span id='fecha-hora' >31/05/2016 12:20:55PM (GMT -06:00)</span></h2>"+
+  "<h2>Estatus de nuestros servicios <span id='fecha-hora' ><%= appTime %></span></h2>"+
   "<table class='pure-table pure-table-horizontal'>"+
       "<thead>"+
           "<tr>"+
@@ -72,15 +74,7 @@ const appView = _.template(
       "</thead>"+
       ""+
       "<tbody>"+
-          "<tr class='status-up'>"+
-              "<td>"+
-                  "<canvas id='myChart' width='350' height='70'></canvas>"+
-              "</td>"+
-              "<td>"+
-
-              "</td>"+
-            "</tr>"+
-
+          "<%= hostCollectionRenderedTable %>"+
       "</tbody>"+
   "</table>"
 

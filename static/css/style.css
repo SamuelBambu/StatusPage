@@ -56,7 +56,7 @@ h2{
   font-size: 14px;
 }
 #fecha-hora::before{
-  content: "Tiempo actual:";
+  content: "Tiempo de consulta:";
   font-size: 10px;
   color: #999;
   display: block;
@@ -99,4 +99,7 @@ h2{
 .tooltip:hover .tooltiptext {
     visibility: visible;
     opacity: 1;
+}
+.loading-services {
+  text-align: center;
 }

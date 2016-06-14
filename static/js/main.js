@@ -1,4 +1,13 @@
 
+
+const mainApp = new appController();
+//mainApp.attachNewRenderElement( document.getElementById("app"));
+//mainApp.fetchAllHosts();
+
+
+
+
+/*
 var ctx = $("#myChart");
 var data = {
     labels: ["6am", "7am", "8pm", "9pm","10am", "11am", "12pm", "1pm", "2pm", "3pm", "4pm","5pm"],
@@ -38,3 +47,4 @@ var myChart = new Chart(
     options: options
   }
 )
+*/

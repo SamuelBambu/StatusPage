@@ -1,0 +1,120 @@
+@font-face {
+    font-family: "Lucida Grande";
+    src: url("/lucidaGrande.ttf") format("truetype");
+}
+body{
+  font-weight: lighter;
+}
+.container{
+  max-width: 980px;
+  margin: auto;
+}
+.menu-bar{
+  border-radius: .5em;
+  padding: 1.2em 1em;
+  box-sizing: border-box;
+  margin-top: 2em;
+  background-color: #121e24;
+  color: white;
+  text-align: right;
+  background-image: url("/static/img/white-ui-horizontal.png");
+  margin-bottom: 2em;
+}
+.pure-table{
+  border: 5px;
+  border-collapse: collapse;
+  border-radius: 5em;
+}
+
+.pure-table tbody{
+  border-left: 1px solid #eee;
+  border-right: 1px solid #eee;
+  border-bottom: 1px solid #eee;
+}
+.pure-table tbody tr{
+  height: 3em;
+  font-size: 18px;
+  padding: 1em;
+}
+.pure-table tbody tr td {
+  text-align: center;
+}
+.pure-table thead{
+  color: white;
+  background-image: url("/static/img/white-ui-horizontal.png");
+  background-color: #121e24;
+  border-left: 1px solid #eee;
+  border-right: 1px solid #eee;
+  border-bottom: 1px solid #eee;
+}
+.pure-table thead tr{
+}
+.pure-table thead tr th{
+  border: none;
+}
+.pure-table thead tr th{
+  padding: 1em .5em;
+  font-weight: lighter;
+}
+table{
+  width: 100%;
+  border: none;
+}
+#status-description{
+  border-top: 1px solid #eee;
+  border-bottom: 1px solid #eee;
+  background-color: #fafafa;
+  margin-top: 3em;
+}
+#status-description tbody tr th{
+  padding: 1em .5em;
+}
+#current-date{
+  font-size: 16px;
+  font-weight: lighter;
+}
+#current-date span{
+  color: #ccc;
+}
+/* Tooltip container */
+.tooltip {
+    position: relative;
+    display: inline-block;
+}
+.fa-arrow-circle-up, .fa-check-circle{
+  color: #43a047;
+}
+.fa-times-circle{
+  color: #e53935;
+}
+.fa-exclamation-circle{
+  color: #fdd835;
+}
+/* Tooltip text */
+.tooltip .tooltiptext {
+    visibility: hidden;
+    width: 120px;
+    background-color: #555;
+    color: #fff;
+    text-align: center;
+    padding: 5px 0;
+    border-radius: 6px;
+    font-size: 14px;
+
+    /* Position the tooltip text */
+    position: absolute;
+    z-index: 1;
+    top: 125%;
+    left: 50%;
+    margin-left: -60px;
+
+    /* Fade in tooltip */
+    opacity: 0;
+    transition: opacity 1s;
+}
+
+/* Show the tooltip text when you mouse over the tooltip container */
+.tooltip:hover .tooltiptext {
+    visibility: visible;
+    opacity: 1;
+}

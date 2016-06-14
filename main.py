@@ -35,6 +35,10 @@ def createPingdomRequest( apiEndpoint = "" ):
 def index():
     return render_template("index.html")
 
+@app.route("/new-template")
+def test():
+    return render_template("newTemplate.html")
+
 @app.route("/api/checks")
 def apiChecks():
 
