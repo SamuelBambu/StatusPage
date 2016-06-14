@@ -1,8 +1,8 @@
 
 
 const mainApp = new appController();
-//mainApp.attachNewRenderElement( document.getElementById("app"));
-//mainApp.fetchAllHosts();
+mainApp.attachRenderingElement( document.getElementById("app"));
+mainApp.fetchAllHosts();
 
 
 

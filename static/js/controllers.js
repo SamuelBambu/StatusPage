@@ -7,50 +7,54 @@ function appController(  ){
                             "www.taecel.com", "www.siprel.net",
                             "ws.tiemporealmovil.mx", "ws.cedixvirtual.mx",
                             "servicios.ecodex.com.mx"
-                          ]
+                          ];
+  this.currentAppDateTime = function(){
+        return new Date().toLocaleString();
+  };
+  this.hostsRenderedTable = "";
 }
 
 appController.prototype = {
-
   fetchAllHosts : function(){
     self = this;
     var rawJson = null;
     console.log("fetching...");
     $.get("/api/checks").done(function(data){
+
     rawJson = JSON.parse(data);
-    self.hostnamesCollection = _.map(
+    self.hostnamesCollection = _.map(//convertimos el json a una lista de hostControllers con sus respectivos modelos
       rawJson.checks,
       function( jsonHostObject ){
         hNMAux = new hostNameModel( jsonHostObject );
         return new hostController( hNMAux );
       });
-      self.hostnamesCollection = _.filter(
+      self.hostnamesCollection = _.filter(//filtrar a solo las companias seleccionadas en visibleServices
         self.hostnamesCollection,
         function( service ){
-          console.log( service )
+          //console.log( service )
           return self.visibleServices.indexOf( service.objectModel.hostname ) >= 0;
         }
-      )
-      self.render();
+      );
+      console.log("Services fetched");
+      self.createHostsRenderedTable();
     });
 
   },
-  render : function(  ){
-
-    const hostCollectionRenderedTable =_.reduce(
+  createHostsRenderedTable : function(){
+    this.hostsRenderedTable =  _.reduce(
       this.hostnamesCollection,
       function( renderedText, modelController ){
-        return renderedText + modelController.render(  );
+        return renderedText + modelController.render( );
       },
       ""
-    );
-    this.renderElement.innerHTML = appView({
-        appTime : new Date().toLocaleString() ,
-        hostCollectionRenderedTable : hostCollectionRenderedTable
-    });
+    )
   },
-  attachNewRenderElement : function( renderElement ){
-    this.renderElement = renderElement;
+  attachRenderingElement: function( renderObj ){
+    this.renderElement = renderObj;
+  },
+  render : function(){
+    console.log(this);
+    this.renderElement.innerHTML = appView( this );
   }
 
 
@@ -64,10 +68,10 @@ function hostController( objectModel ){
 }
 
 hostController.prototype = {
-
+  self : this,
   render : function(  ){
     console.log(this.objectModel);
-    return rowView( {host : this.objectModel} );
+    return rowView( this.objectModel );
 
   },
   updateModel: function( objectModel ){
