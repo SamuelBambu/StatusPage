@@ -18,7 +18,7 @@ function appController(  ){
 
 appController.prototype = {
   fetchAllHosts : function(){
-    self = this;
+    var self = this;
     var rawJson = null;
     console.log("Fetching...");
     $.get("/api/checks").done(function(data){
@@ -41,19 +41,26 @@ appController.prototype = {
       self.createHostsRenderedTable();
       self.render();
       _.invoke(self.hostnamesCollection,'refreshRenderingElement');
-      _.invoke(self.hostnamesCollection,'updateSummary');
+      auxLength = self.hostnamesCollection.length;
+      for( var i = 0 ; i < auxLength ; i++   ){
+        (function( hostCol ){
+
+          hostCol.updateSummary();
+        })( self.hostnamesCollection[i] );
+      }
 
     });
 
   },
   createHostsRenderedTable : function(){
-    this.hostsRenderedTable =  _.reduce(
-      this.hostnamesCollection,
-      function( renderedText, modelController ){
-        return renderedText + modelController.render( );
-      },
-      ""
-    )
+    this.hostsRenderedTable =
+      _.reduce(
+        this.hostnamesCollection,
+        function( renderedText, modelController ){
+          return renderedText + rowView( modelController.objectModel );
+        },
+        ""
+      )
   },
   attachRenderingElement: function( renderObj ){
     this.renderElement = renderObj;
@@ -70,7 +77,6 @@ appController.prototype = {
 function hostController( objectModel ){
   this.renderElement = null;
   this.objectModel = objectModel;
-  this.summary = [];
 }
 
 hostController.prototype = {
@@ -78,25 +84,27 @@ hostController.prototype = {
     this.renderElement = document.getElementById(String( this.objectModel.id ));
   },
   render : function(  ){
-    //console.log(this.objectModel);
-    return rowView( this.objectModel  );
+    this.renderElement.innerHTML =  inRowView( this.objectModel  );
 
   },
   updateModel : function( objectModel ){
     this.objectModel = objectModel;
   },
+  createSummaryRenderedTable : function(){
+    this.objectModel.summaryRenderedTable = getStatusTrs( this.objectModel.summary );
+  },
   updateSummary : function(  ){//type of summary (week | day | hour)
-    self = this;
     if( this.objectModel ){
       //console.log( this.objectModel );
-
-
+      var self = this;
       $.get("/api/summary/"+ self.objectModel.id +"/day").done(
         function(data){
-          console.log( self.objectModel );
+          //console.log( self );
           var jsonObject = JSON.parse(data)
-          self.summary = jsonObject.summary.days;
-          console.log( "objectModel <" +  String(self.objectModel.id) +"> updated " );
+          self.objectModel.summary = jsonObject.summary.days;
+          //console.log( "objectModel <" +  String(self.objectModel.id) +"> "+ self.objectModel.hostname   +" updated " );
+          self.createSummaryRenderedTable();
+          self.render();
       });
 
     }else {

@@ -2,6 +2,7 @@
 const icoActivo = "<i class='tooltip fa fa-check-circle fa-lg' aria-hidden='true'>";
 const icoCaido = "<i class='tooltip fa fa-times-circle fa-lg' aria-hidden='true'>";
 const icoArriba = "<i class='tooltip fa fa-arrow-circle-up fa-lg' aria-hidden='true'>";
+const icoIntermitente = "<i class=' tooltip fa fa-exclamation-circle fa-lg' aria-hidden='true'>"
 
 const waitingView = "<div class='loading-services'>"+
                       "<h1>Verificanto Estatus de Servicios</h1>"+
@@ -29,8 +30,9 @@ const rowView = _.template(
 const inRowView = _.template(
   "<td><% status ? print(icoArriba) : print(icoCaido) %>"+
     "<span class='tooltiptext' ><% status ? print('Ping:' + lastresponsetime ) : print('Caido') %> </span>"+
-  "</td>"+
-  "<td><%= hostname %></td>"
+  "</i></td>"+
+  "<td><%= hostname %></td>"+
+  "<% print( summaryRenderedTable ) %>"
 
 );
 /*
@@ -48,7 +50,8 @@ const appView = _.template(
           "<img src='/static/img/eleventa.png'  />"+
       "</div>"+
       "<div class='pure-u-3-4'>"+
-          "<h3 id='current-date' ><% print(currentAppDateTime()  ) %></span></h3>"+
+          "<p>Fecha actual:</p>"+
+          "<h3 id='current-date' ><% print(currentAppDateTime()) %></span></h3>"+
       "</div>"+
   "</div>"+
   //body table
@@ -83,4 +86,23 @@ getDayTrs = function(){//returns a string with all the trs of the days
 }
 const daysViewList = _.template(
     "<th><%= dayString %></th>"
-)
+);
+getStatusTrs = function( summaryList ){
+  var days = _.take( _.rest(summaryList, 4 ), 6).reverse();//takes first 7 days and skips first
+  return _.reduce(
+    days,
+    function(templ, day){
+      //console.log(day);
+      var dayStatus = (day.downtime * 100) / day.uptime;
+      //console.log( new Date( day.starttime * 1000 ) )
+      //console.log( dayStatus );
+      return templ + dayStatusList( {dayStatus : dayStatus, day : day} );
+    },
+    ""
+  )
+};
+const dayStatusList = _.template(
+  "<td><% if( dayStatus == 0 ){print( icoActivo )}else if( dayStatus <= 1 ){print( icoIntermitente )}else{print(icoCaido)}  %>"+
+    "<span class='tooltiptext' ><%  print('Ping promedio: ' + day.avgresponse ) %> </span>"+
+  "</td>"
+);

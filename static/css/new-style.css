@@ -20,6 +20,14 @@ body{
   background-image: url("/static/img/white-ui-horizontal.png");
   margin-bottom: 2em;
 }
+.menu-bar h3{
+  margin-top: 2px;
+}
+.menu-bar p{
+  font-size: 14px;
+  color: #ccc;
+  margin: 0px;
+}
 .pure-table{
   border: 5px;
   border-collapse: collapse;
