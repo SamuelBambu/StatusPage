@@ -8,6 +8,11 @@ function appController(  ){
                             "ws.tiemporealmovil.mx", "ws.cedixvirtual.mx",
                             "servicios.ecodex.com.mx"
                           ];
+  this.visibleNames = [ "Recargas electronicas Taecel", "Recargas electronicas Siprel",
+                        "Recargas electronicas Tiempo Real Movil", "Recargas electronicas La Red +",
+                        "Facturacion electronica Ecodex"
+                          ];
+  this.namesMapper = _.object( _.zip(this.visibleServices, this.visibleNames) );
   this.currentAppDateTime = function(){
         return new Date().toUTCString().substring(4);;
   };

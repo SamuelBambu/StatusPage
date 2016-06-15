@@ -11,7 +11,7 @@ function hostNameModel( obj ) {
   this.id = obj.id;
 
   this.summary = [];
-  this.summaryRenderedTable = ""
+  this.summaryRenderedTable = "<td><img src='static/img/ajax-loader.gif'></td>"
 }
 
 hostNameModel.prototype = {

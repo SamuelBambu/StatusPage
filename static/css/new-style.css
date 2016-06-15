@@ -101,6 +101,16 @@ table{
 .fa-exclamation-circle{
   color: #fdd835;
 }
+.footer{
+  padding: 1em;
+  text-align: center;
+}
+.footer a{
+  text-decoration: none;
+  color: #ccc;
+  margin: 0 1em;
+  
+}
 /* Tooltip text */
 .tooltip .tooltiptext {
     visibility: hidden;
