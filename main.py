@@ -47,7 +47,7 @@ def apiChecks():
     return json.dumps( jsonResponse, indent = 2, sort_keys = True )
 
 
-@app.route("/api/summary/<int:checkid>/<string:typeOfSummary>") #type of summary ( week | days | hours )
+@app.route("/api/summary/<int:checkid>/<string:typeOfSummary>") #type of summary ( week | day | hours )
 def apiAnalysis(checkid, typeOfSummary):
     parameters = {
         "includeuptime" : "true",

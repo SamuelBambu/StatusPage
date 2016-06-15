@@ -11,7 +11,6 @@ function appController(  ){
   this.currentAppDateTime = function(){
         return new Date().toUTCString().substring(4);;
   };
-  this.hostsRenderedTable = waitingView;
   //actualizamos la fecha instantaneamente
   document.getElementById("current-date").innerHTML = this.currentAppDateTime();
 
@@ -21,7 +20,7 @@ appController.prototype = {
   fetchAllHosts : function(){
     self = this;
     var rawJson = null;
-    console.log("fetching...");
+    console.log("Fetching...");
     $.get("/api/checks").done(function(data){
 
     rawJson = JSON.parse(data);
@@ -41,6 +40,9 @@ appController.prototype = {
       console.log("Services fetched");
       self.createHostsRenderedTable();
       self.render();
+      _.invoke(self.hostnamesCollection,'refreshRenderingElement');
+      _.invoke(self.hostnamesCollection,'updateSummary');
+
     });
 
   },
@@ -57,7 +59,7 @@ appController.prototype = {
     this.renderElement = renderObj;
   },
   render : function(){
-    console.log(this);
+    //console.log(this);
     this.renderElement.innerHTML = appView( this );
   }
 
@@ -66,19 +68,40 @@ appController.prototype = {
 
 // HOST CONTROLLER
 function hostController( objectModel ){
-
+  this.renderElement = null;
   this.objectModel = objectModel;
-
+  this.summary = [];
 }
 
 hostController.prototype = {
-  self : this,
+  refreshRenderingElement : function(){
+    this.renderElement = document.getElementById(String( this.objectModel.id ));
+  },
   render : function(  ){
-    console.log(this.objectModel);
-    return rowView( this.objectModel );
+    //console.log(this.objectModel);
+    return rowView( this.objectModel  );
 
   },
-  updateModel: function( objectModel ){
-    this.objectModel = objectModel
+  updateModel : function( objectModel ){
+    this.objectModel = objectModel;
+  },
+  updateSummary : function(  ){//type of summary (week | day | hour)
+    self = this;
+    if( this.objectModel ){
+      //console.log( this.objectModel );
+
+
+      $.get("/api/summary/"+ self.objectModel.id +"/day").done(
+        function(data){
+          console.log( self.objectModel );
+          var jsonObject = JSON.parse(data)
+          self.summary = jsonObject.summary.days;
+          console.log( "objectModel <" +  String(self.objectModel.id) +"> updated " );
+      });
+
+    }else {
+      console.log("No objectModel defined")
+      return null;
+    }
   }
 }
