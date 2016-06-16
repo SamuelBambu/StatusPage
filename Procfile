@@ -1,1 +1,1 @@
-web: gunicorn --pythonpath wsgi
+web: gunicorn wsgi
