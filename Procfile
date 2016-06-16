@@ -1,1 +1,1 @@
-web: gunicorn statusAplication.main:app
+web: gunicorn statusAplication:main
