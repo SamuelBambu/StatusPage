@@ -1,5 +1,5 @@
 import os
 from statusAplication.main import app
-console.log( os.environ["PORT"] )
+print os.environ.get("PORT")
 
 app.run()
