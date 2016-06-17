@@ -59,14 +59,11 @@ def apiAnalysis(checkid, typeOfSummary):
     jsonResponse =   json.loads(urllib2.urlopen(request).read())
     return json.dumps( jsonResponse, indent = 2, sort_keys = True )
 
-HerokuPort = os.environ.get("PORT")
-print "Correr en puerto:"
-print HerokuPort
 
 
 if __name__ == "__main__":
 	app.run(
-        port        = HerokuPort ,
+        port        = 5000 ,
         debug       = True,
         host        = "0.0.0.0",
         threaded    =True
