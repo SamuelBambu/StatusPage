@@ -1,13 +1,13 @@
 import os
 from statusAplication.main import app
 
-HerokuPort = os.environ.get("PORT")
+herokuPort = os.environ.get("PORT", 5000)
 
 print "Correr en puerto:"
-print HerokuPort
+print herokuPort
 
 app.run(
-	port = HerokuPort
+	port = herokuPort
 )
 
 
