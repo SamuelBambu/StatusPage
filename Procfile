@@ -1,1 +1,1 @@
-web: gunicorn statusAplication:main
+web: gunicorn wsgi.py
