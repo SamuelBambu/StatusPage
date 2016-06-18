@@ -67,6 +67,14 @@ body{
 .loading-services {
   text-align: center;
 }
+.leyenda{
+  display: block;
+  color: #aaa ;
+  font-size: 13px;
+  margin-top: -10px;
+  font-weight: normal;
+}
+
 table{
   width: 100%;
   border: none;
@@ -109,7 +117,23 @@ table{
   text-decoration: none;
   color: #ccc;
   margin: 0 1em;
-  
+
+}
+.arrrow-down::after{
+    content: '';
+    width: 0;
+    height: 0;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    display: block;
+    text-align: center;
+    border-top: 10px solid #ddd;
+    position: relative;;
+    left: 50%;
+}
+.today{
+  background-color: #121e24;
+  font-weight: bold;
 }
 /* Tooltip text */
 .tooltip .tooltiptext {

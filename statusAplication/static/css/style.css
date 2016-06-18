@@ -51,6 +51,11 @@ h2{
 .status-down{
   background-color: #ffebee;
 }
+.leyenda{
+  display: block;
+  color: red;
+  font-size: 13px;
+}
 #fecha-hora{
   color: #999;
   font-size: 14px;

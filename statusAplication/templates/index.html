@@ -38,7 +38,7 @@
           <thead>
               <tr>
                   <th></th>
-                  <th>Servicio</th>
+                  <th class="arrow_down" >Servicio</th>
                   <th></th>
                   <th></th>
                   <th></th>
@@ -63,18 +63,26 @@
         <table id="status-description" >
           <tbody>
             <tr>
-              <th>
+              <th >
                 <i class=' tooltip fa fa-check-circle fa-lg' aria-hidden='true'></i>
-                  Servicio operando normalmente
-
+                  <p>
+                    Servicio operando normalmente
+                  </p>
+                  <span class="leyenda">Fuera de servicio menos de 1 minuto</span>
               </th>
               <th>
                 <i class=' tooltip fa fa-exclamation-circle fa-lg' aria-hidden='true'></i>
-                Servicio intermintente
+                <p>
+                  Servicio intermintente
+                </p>
+                <span class="leyenda">Fuera de servicio entre 1 - 30 minutos</span>
               </th>
               <th>
                 <i class=' tooltip fa fa-times-circle fa-lg' aria-hidden='true'></i>
-                Servicio con fallas
+                <p>
+                  Servicio con fallas
+                </p>
+                <span class="leyenda">Fuera de servicio m&aacute;s de 30 minutos</span>
               </th>
             </tr>
           </tbody>
@@ -84,9 +92,7 @@
     </div>
     <div class="pure-g container">
       <div class="pure-u-1 footer">
-        <a href="http://www.bambucode.com/" target="_blank" >Bambucode</a>
-        <a href="http://www.eleventa.com/" target="_blank">Eleventa</a>
-        <a href="#">soporte@eleventa.com</a>
+        
       </div>
     </div>
     <!-- javascript  -->

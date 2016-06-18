@@ -62,7 +62,7 @@ const appView = _.template(
             "<thead>"+
                 "<tr>"+
                     "<th></th>"+
-                    "<th>Servicio</th>"+
+                    "<th  class='arrow_down' >Servicio</th>"+
                     "<% print(getDayTrs()) %>"+
                 "</tr>"+
             "</thead>"+
@@ -75,30 +75,41 @@ const appView = _.template(
   "</div>"
 );
 getDayTrs = function(){//returns a string with all the trs of the days
+  // este codigo genera el th del dia de hoy
+  var todayTh = daysViewList({
+      dayString: _.take(getLastNumberOfDays()),
+      clase : "today"
+  });
+  //rest of the days
   return _.reduce(
-    getLastNumberOfDays(),//we skip todays value
+    _.rest(getLastNumberOfDays()), //we skip´today
     function(templ, day ){
-      return templ + daysViewList( {dayString:day} )
+      return templ + daysViewList( {dayString:day, clase :""} )
     },
-    ""
+    todayTh
   );
 
 }
 const daysViewList = _.template(
-    "<th><%= dayString %></th>"
+    "<th class='<%= clase %>' ><%= dayString %></th>"
 );
 getStatusTrs = function( summaryList ){
-  var days = _.take( _.rest(summaryList, 4 ), 7).reverse();
+  var days = _.first( _.rest(summaryList, 4 ), 7).reverse();//summary list es la lista de cada summary de cada hostmodel
+  // este codigo genera el td del dia de hoy
+  var today = _.take( days)
+  var today = dayStatusList({
+    dayStatus : ((today.downtime * 100)/(24 * 60 * 60)),
+    day : today,
+    clase:"today"
+  });
+  //resto de los dias
   return _.reduce(
-    days,
+    _.rest(days),
     function(templ, day){
-      //console.log(day);
       var dayStatus = (day.downtime * 100 ) / (24 * 60 * 60);//tiempo caido en segundos
-      //console.log( new Date( day.starttime * 1000 ) )
-      //console.log( dayStatus );
-      return templ + dayStatusList( {dayStatus : dayStatus, day : day} );
+      return templ + dayStatusList( {dayStatus : dayStatus, day : day, clase:""} );
     },
-    ""
+    today
   )
 };
 var prettyPrintMins = function(mins){
@@ -115,7 +126,7 @@ var getDownTime = function( percentage ){
   return prettyPrintMins(downMinutes);
 };
 const dayStatusList = _.template(
-  "<td><% if( dayStatus == 0 ){print( icoActivo )}else if( dayStatus <= 2 ){print( icoIntermitente )}else{print(icoCaido)}  %>"+
+  "<td class='<%= clase %>' ><% if( dayStatus == 0 ){print( icoActivo )}else if( dayStatus <= 2 ){print( icoIntermitente )}else{print(icoCaido)}  %>"+
     "<span class='tooltiptext' >"+
       "<p><%  print('Ping promedio: ' + day.avgresponse ) %></p>"+
       "<p><%  print('Arriba: ' + Math.floor( 100 - dayStatus ) + '%' ) %></p>"+
