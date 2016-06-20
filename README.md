@@ -7,8 +7,8 @@ https://git.heroku.com/estatus-servicios-bambu.git
 
 #### Deployment
 
-Install the heroku [toolbelt](https://toolbelt.heroku.com/)
-App in [Dashboard](https://dashboard.heroku.com/orgs/bambucoders/apps)
+Install the heroku [toolbelt](https://toolbelt.heroku.com/).
+App in [Dashboard](https://dashboard.heroku.com/orgs/bambucoders/apps).
 
 ##### Authenticate:
 ```
