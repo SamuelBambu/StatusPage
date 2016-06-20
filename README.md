@@ -8,12 +8,13 @@ https://git.heroku.com/estatus-servicios-bambu.git
 #### Deployment
 
 Install the heroku [toolbelt](https://toolbelt.heroku.com/)
+App in [Dashboard](https://dashboard.heroku.com/orgs/bambucoders/apps)
 
-Authenticate:
+##### Authenticate:
 ```
   >> heroku login
 ```
-Add repository and push:
+##### Add repository and push:
 ```
   >> git remote add heroku https://git.heroku.com/estatus-servicios-bambu.git
   >> git push heroku master
