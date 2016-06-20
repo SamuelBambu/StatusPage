@@ -133,8 +133,14 @@ table{
   font-weight: lighter;
   text-align: center;
 }
-.faqs h3{
-  color: #666;
+.faqs h3, h4{
+  color: #555;
+}
+.faqs p{
+  font-size: 14px;
+  color: #777;
+  text-align: justify;
+  padding: .5em 2em;
 }
 .arrrow-down::after{
     content: '';
