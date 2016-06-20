@@ -5,16 +5,20 @@ function appController(  ){
   this.renderElement = null;
   this.visibleServices = [  //aqui se agregan los servicios que se quiere que se despleguen
                             //en la lista, se filtran por el dominio del servicio
-                            "www.taecel.com", "www.siprel.net",
-                            "ws.tiemporealmovil.mx", "ws.cedixvirtual.mx",
+                            "www.taecel.com",
+                            "www.siprel.net",
+                            "ws.tiemporealmovil.mx",
+                            "ws.cedixvirtual.mx",
                             "servicios.ecodex.com.mx"
                           ];
   this.visibleNames = [ //Son los labels que se utilizaran en lugar de mostrar los dominios
                         //de los servicios por default
-                        "Recargas electr&oacute;nicas Taecel", "Recargas electr&oacute;nicas Siprel",
-                        "Recargas electr&oacute;nicas Tiempo Real Movil", "Recargas electr&oacute;nicas La Red +",
+                        "Recargas electr&oacute;nicas Taecel",
+                        "Recargas electr&oacute;nicas Siprel",
+                        "Recargas electr&oacute;nicas Tiempo Real M&oacute;vil",
+                        "Recargas electr&oacute;nicas La Red +",
                         "Facturacion electr&oacute;nica Ecodex"
-                          ];
+                      ];
   //este objeto es un auxuliar para mappear los dominios con los labels que les corresponde
   this.namesMapper = _.object( _.zip(this.visibleServices, this.visibleNames) );
   this.currentAppDateTime = function(){
