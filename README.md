@@ -7,7 +7,7 @@ https://git.heroku.com/estatus-servicios-bambu.git
 
 #### Deployment
 
-Install the heroku toolbelt[https://toolbelt.heroku.com/]
+Install the heroku [toolbelt](https://toolbelt.heroku.com/)
 
 Authenticate:
 ```
@@ -19,6 +19,6 @@ Add repository and push:
   >> git push heroku master
 ```
 
-- Just make sure you have all the requirements from requirements.txt installed ( pip install -r requierements.txt )
+- Just make sure you have all the requirements from requirements.txt installed ` pip install -r requierements.txt `
 - And make sure the Procfile has this content
 ` web: gunicorn wsgi:app `
