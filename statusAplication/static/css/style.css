@@ -127,6 +127,15 @@ table{
   font-size: 10px;
   margin-top: 3em;
 }
+.faqs{
+  margin-top: 5em;
+  border-top: 1px solid #eee;
+  font-weight: lighter;
+  text-align: center;
+}
+.faqs h3{
+  color: #666;
+}
 .arrrow-down::after{
     content: '';
     width: 0;
