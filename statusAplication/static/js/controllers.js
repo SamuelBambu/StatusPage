@@ -11,9 +11,9 @@ function appController(  ){
                           ];
   this.visibleNames = [ //Son los labels que se utilizaran en lugar de mostrar los dominios
                         //de los servicios por default
-                        "Recargas electronicas Taecel", "Recargas electronicas Siprel",
-                        "Recargas electronicas Tiempo Real Movil", "Recargas electronicas La Red +",
-                        "Facturacion electronica Ecodex"
+                        "Recargas electr&oacute;nicas Taecel", "Recargas electr&oacute;nicas Siprel",
+                        "Recargas electr&oacute;nicas Tiempo Real Movil", "Recargas electr&oacute;nicas La Red +",
+                        "Facturacion electr&oacute;nica Ecodex"
                           ];
   //este objeto es un auxuliar para mappear los dominios con los labels que les corresponde
   this.namesMapper = _.object( _.zip(this.visibleServices, this.visibleNames) );
@@ -22,6 +22,8 @@ function appController(  ){
   };
   //actualizamos la fecha instantaneamente al correr la aplicacion
   document.getElementById("current-date").innerHTML = this.currentAppDateTime();
+  var currentYear = new Date();
+  document.getElementById("current-year").innerHTML = currentYear.getFullYear();
 }
 
 appController.prototype = {
