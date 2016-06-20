@@ -20,6 +20,12 @@ App in [Dashboard](https://dashboard.heroku.com/orgs/bambucoders/apps).
   >> git push heroku master
 ```
 
-- Just make sure you have all the requirements from requirements.txt installed ` pip install -r requierements.txt `
+- Just make sure you have all the dependencies installed from requirements.txt installed ` pip install -r requierements.txt `
 - And make sure the Procfile has this content
 ` web: gunicorn wsgi:app `
+
+##### Increase Workers
+To increase the number of workers just run this command with the amount of workers desired
+```
+  >> heroku ps:scale web=2
+```
