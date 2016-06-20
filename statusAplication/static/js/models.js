@@ -11,6 +11,7 @@ function hostNameModel( obj ) {
   this.id = obj.id;
 
   this.summary = [];
+  //esta se toma como contenido inicial para renderizar los gif de cargado en los tr's
   this.summaryRenderedTable = "<td><img src='static/img/ajax-loader.gif'></td>"
 }
 

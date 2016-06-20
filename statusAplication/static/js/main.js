@@ -1,6 +1,7 @@
 const numberOfDays = 7;
 var daysList = { 0:"Dom",1:"Lun",2:"Mar",3:"Mie",4:"Jue",5:"Vie",6:"Sab" }
-getLastNumberOfDays = function(){ //returns a list of string mini representations of the last specified days
+getLastNumberOfDays = function(){ //returns a list of string representations (ex: Lun 20  )
+                                  //of the last specified days by numberOfDays 
   var currentDate =  new Date().getTime() ;
   var days = _.range(0, numberOfDays);
   var timeStamps = _.map(//timestaps of last 5 days

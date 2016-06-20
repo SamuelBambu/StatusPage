@@ -1,88 +1,148 @@
-table{
-  width: 100%;
+@font-face {
+    font-family: "Lucida Grande";
+    src: url("/lucidaGrande.ttf") format("truetype");
 }
-h2{
-
+body{
+  font-weight: lighter;
 }
-.sidebar{
-  background-image: url("/static/img/bg.jpg");
-  background-repeat: repeat;
-}
-.brand-tagline{
-
-}
-.eleventa-logo{
-  width: 180px;
+.container{
+  max-width: 980px;
   margin: auto;
 }
-.check-label{
-  font-size: 14px;
-  font-weight: bold;
-  margin: 0;
-  color: #999;
+.menu-bar{
+  border-radius: .5em;
+  padding: 1.2em 1em;
+  box-sizing: border-box;
+  margin-top: 2em;
+  background-color: #121e24;
+  color: white;
+  text-align: right;
+  background-image: url("/static/img/white-ui-horizontal.png");
+  margin-bottom: 2em;
 }
-.check-value{
+.menu-bar h3{
+  margin-top: 2px;
+}
+.menu-bar p{
   font-size: 14px;
-  margin-top: 0;
-  margin-bottom: .5em;
+  color: #ccc;
+  margin: 0px;
+}
+.pure-table{
+  border: 5px;
+  border-collapse: collapse;
+  border-radius: 5em;
+}
 
+.pure-table tbody{
+  border-left: 1px solid #eee;
+  border-right: 1px solid #eee;
+  border-bottom: 1px solid #eee;
 }
-.check-title{
-  font-size: 20px;
-  font-weight: bold;
+.pure-table tbody tr{
+  height: 3em;
+  font-size: 18px;
+  padding: 1em;
+}
+.pure-table tbody tr td {
   text-align: center;
-  margin-top: .5em;
-  margin-bottom: .5em;
-
 }
-.status{
-  font-size: 20px;
-  display: block
+.pure-table thead{
+  color: white;
+  background-image: url("/static/img/white-ui-horizontal.png");
+  background-color: #121e24;
+  border-left: 1px solid #eee;
+  border-right: 1px solid #eee;
+  border-bottom: 1px solid #eee;
 }
-.activo{
-  color: #43a047;
+.pure-table thead tr{
 }
-.caido{
-  color: #e53935;
+.pure-table thead tr th{
+  border: none;
 }
-.status-up{
-  background-color:#f1f8e9;
+.pure-table thead tr th{
+  padding: 1em .5em;
+  font-weight: lighter;
 }
-.status-down{
-  background-color: #ffebee;
+.loading-services {
+  text-align: center;
 }
 .leyenda{
   display: block;
-  color: red;
+  color: #aaa ;
   font-size: 13px;
-}
-#fecha-hora{
-  color: #999;
-  font-size: 14px;
-}
-#fecha-hora::before{
-  content: "Tiempo de consulta:";
-  font-size: 10px;
-  color: #999;
-  display: block;
-}
-#toggle-historico{
-  font-size: 14px;
-  color: #999;
+  margin-top: -10px;
+  font-weight: normal;
 }
 
+table{
+  width: 100%;
+  border: none;
+}
+#status-description{
+  border-top: 1px solid #eee;
+  border-bottom: 1px solid #eee;
+  background-color: #fafafa;
+  margin-top: 3em;
+}
+#status-description tbody tr th{
+  padding: 1em .5em;
+}
+#current-date{
+  font-size: 16px;
+  font-weight: lighter;
+}
+#current-date span{
+  color: #ccc;
+}
 /* Tooltip container */
 .tooltip {
     position: relative;
     display: inline-block;
 }
+.fa-arrow-circle-up, .fa-check-circle{
+  color: #43a047;
+}
+.fa-times-circle{
+  color: #e53935;
+}
+.fa-exclamation-circle{
+  color: #fdd835;
+}
+.footer{
+  padding: 1em;
+  text-align: center;
+}
+.footer a{
+  text-decoration: none;
+  color: #ccc;
+  margin: 0 1em;
 
+}
+.arrrow-down::after{
+    content: '';
+    width: 0;
+    height: 0;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    display: block;
+    text-align: center;
+    border-top: 10px solid #ddd;
+    position: relative;;
+    left: 50%;
+}
+.today{
+  background-color: #121e24;
+  font-weight: bold;
+}
 /* Tooltip text */
 .tooltip .tooltiptext {
     visibility: hidden;
-    width: 130px;
-    background-color: #555;
-    color: #fff;
+    width: 120px;
+    background-color: white;
+    color: black;
+    border: 1px solid #666;
+    box-shadow: 0 0 3px 2px rgba(0,0,0,.35);
     text-align: center;
     padding: 5px 0;
     border-radius: 6px;
@@ -99,17 +159,9 @@ h2{
     opacity: 0;
     transition: opacity 1s;
 }
-.tooltiptext p{
-  -webkit-margin-before:0px;
-  -webkit-margin-after:0px;
-  margin-top: 0;
-  margin-bottom: 0;
-}
+
 /* Show the tooltip text when you mouse over the tooltip container */
 .tooltip:hover .tooltiptext {
     visibility: visible;
     opacity: 1;
-}
-.loading-services {
-  text-align: center;
 }
