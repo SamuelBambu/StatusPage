@@ -155,7 +155,7 @@ table{
     left: 50%;
 }
 .today{
-  background-color: #121e24;
+  background-color: rgba(18, 30, 36, .15) !important;
   font-weight: bold;
 }
 /* Tooltip text */

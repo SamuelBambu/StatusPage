@@ -66,5 +66,4 @@ if __name__ == "__main__":
         port        = 5000 ,
         host        = "0.0.0.0",
         threaded = True,
-        debug = True
 )
