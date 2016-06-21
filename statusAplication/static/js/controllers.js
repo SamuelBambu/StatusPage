@@ -17,7 +17,7 @@ function appController(  ){
                         "Recargas electr&oacute;nicas Siprel",
                         "Recargas electr&oacute;nicas Tiempo Real M&oacute;vil",
                         "Recargas electr&oacute;nicas La Red +",
-                        "Facturacion electr&oacute;nica Ecodex"
+                        "Facturaci&oacute;n electr&oacute;nica Ecodex"
                       ];
   //este objeto es un auxuliar para mappear los dominios con los labels que les corresponde
   this.namesMapper = _.object( _.zip(this.visibleServices, this.visibleNames) );
