@@ -5,7 +5,7 @@ const icoArriba = "<i class='tooltip fa fa-arrow-circle-up fa-lg' aria-hidden='t
 const icoIntermitente = "<i class=' tooltip fa fa-exclamation-circle fa-lg' aria-hidden='true'>"
 
 const waitingView = "<div class='loading-services'>"+
-                      "<h1>Verificanto Estatus de Servicios</h1>"+
+                      "<h1>Verificando Estatus de Servicios</h1>"+
                       "<img src='static/img/ajax-loader.gif'>"+
                     "</div>"
 /*
