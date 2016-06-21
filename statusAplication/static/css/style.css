@@ -135,12 +135,18 @@ table{
 }
 .faqs h3, h4{
   color: #555;
+  padding: 1em 1em;
+  margin-bottom: 0;
+}
+
+.faqs h4{
+  text-align: left;
 }
 .faqs p{
   font-size: 14px;
   color: #777;
   text-align: justify;
-  padding: .5em 2em;
+  padding: .5em 1em;
 }
 .arrrow-down::after{
     content: '';
