@@ -19,7 +19,7 @@ function appController(  ){
                         "Recargas electr&oacute;nicas Tiempo Real M&oacute;vil",
                         "Recargas electr&oacute;nicas La Red +",
                         "Facturaci&oacute;n electr&oacute;nica Ecodex",
-                        "ePago (Pago de Servicios)"
+                        "Pago de Servicios: ePago"
                       ];
   //este objeto es un auxuliar para mappear los dominios con los labels que les corresponde
   this.namesMapper = _.object( _.zip(this.visibleServices, this.visibleNames) );

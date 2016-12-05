@@ -1,11 +1,28 @@
 # Monitoreo
 Página de Monitoreo de los servicios de eleventa (http://monitoreo.eleventa.com)
 
+## How to run on local
+
+- Clone the repository
+- Make sure you have python, virtualenv and pip installed
+- Execute the virtual environment for instructions look [here](https://virtualenv.pypa.io/en/stable/userguide/)
+- Inside the repo folder run pip install -r requirements.txt to install all the depencencies
+- Run python wsgi.py and the server will run on localhost:5000
+
+## Making Changes
+
+##### Add New Services to the Monitor
+
+To add a new service to the dashboard:
+- Check that it exists in the [pigndom page](https://my.pingdom.com/newchecks/checks#)
+- Add the service url to the statusBambuFlask/statusaplication/static/js/controllers.js
+- Add the label that will be used
+- Deploy to heroku master
+
 ### Heroku repository
 https://git.heroku.com/estatus-servicios-bambu.git
 
-
-#### Deployment
+### Deployment
 
 Install the heroku [toolbelt](https://toolbelt.heroku.com/).
 App in [Dashboard](https://dashboard.heroku.com/orgs/bambucoders/apps).
@@ -29,18 +46,3 @@ To increase the number of workers just run this command with the amount of worke
 ```
   >> heroku ps:scale web=2
 ```
-
-### How to run on local
-
-Clone the repository, also make sure you have python, virtualenv and pip installed, execute the virtual environment
-for instructions look [here](https://virtualenv.pypa.io/en/stable/userguide/), inside the repo folder run pip install -r requirements.txt to install all the depencencies, now run python wsgi.py, and the server will run on localhost:5000
-
-### Making Changes
-
-##### Add New Services to the monitor
-
-To add a new service to the dashboard:
-- Check that it exists in the pigndom page
-- Add the service url to the statusBambuFlask/statusaplication/static/js/controllers.js
-- Add the label that will be used
-- Deploy to heroku master
