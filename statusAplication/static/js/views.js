@@ -45,7 +45,7 @@ const appView = _.template(
           "<img src='/static/img/eleventa.png'  />"+
       "</div>"+
       "<div class='pure-u-3-4'>"+
-          "<p>Fecha actual:</p>"+
+          "<p>Fecha y hora de consulta (servidor):</p>"+
           "<h3 id='current-date' ><% print(currentAppDateTime()) %></span></h3>"+
       "</div>"+
   "</div>"+
