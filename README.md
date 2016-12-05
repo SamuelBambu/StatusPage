@@ -6,8 +6,8 @@ Página de Monitoreo de los servicios de eleventa (http://monitoreo.eleventa.com
 - Clone the repository
 - Make sure you have python, virtualenv and pip installed
 - Execute the virtual environment for instructions look [here](https://virtualenv.pypa.io/en/stable/userguide/)
-- Inside the repo folder run pip install -r requirements.txt to install all the depencencies
-- Run python wsgi.py and the server will run on localhost:5000
+- Inside the repo folder run `>> pip install -r requirements.txt` to install all the depencencies
+- Run python wsgi.py and the server will run on [localhost:5000](localhost:5000)
 
 ## Making Changes
 
@@ -37,7 +37,7 @@ App in [Dashboard](https://dashboard.heroku.com/orgs/bambucoders/apps).
   >> git push heroku master
 ```
 
-- Just make sure you have all the dependencies installed from requirements.txt installed ` pip install -r requierements.txt `
+- Just make sure you have all the dependencies installed from requirements.txt installed `>> pip install -r requierements.txt `
 - And make sure the Procfile has this content
 ` web: gunicorn wsgi:app `
 
