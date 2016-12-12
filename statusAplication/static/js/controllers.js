@@ -6,7 +6,6 @@ function appController(  ){
   this.visibleServices = [  //aqui se agregan los servicios que se quiere que se despleguen
                             //en la lista, se filtran por el dominio del servicio
                             "www.taecel.com",
-                            "www.siprel.net",
                             "ws.tiemporealmovil.mx",
                             "ws.cedixvirtual.mx",
                             "servicios.ecodex.com.mx",
@@ -15,7 +14,6 @@ function appController(  ){
   this.visibleNames = [ //Son los labels que se utilizaran en lugar de mostrar los dominios
                         //de los servicios por default
                         "Recargas electr&oacute;nicas Taecel",
-                        "Recargas electr&oacute;nicas Siprel",
                         "Recargas electr&oacute;nicas Tiempo Real M&oacute;vil",
                         "Recargas electr&oacute;nicas La Red +",
                         "Facturaci&oacute;n electr&oacute;nica Ecodex",
